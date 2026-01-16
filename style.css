@@ -360,7 +360,7 @@ section {
 
 .hero-content {
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -699,16 +699,15 @@ footer {
 
     .top-navbar .container {
         display: grid;
-        grid-template-columns: 1fr 1fr auto;
-        gap: 0.3rem;
+        grid-template-columns: auto auto;
+        gap: 0.5rem;
         padding: 0.6rem 0.8rem;
         align-items: center;
     }
 
     .top-info-left {
-        justify-self: start;
-        text-align: left;
-        grid-column: 1;
+        \r\n display: none;
+        \r\n
     }
 
     .top-info-center {
@@ -719,8 +718,8 @@ footer {
 
     .social-icons {
         justify-self: end;
-        gap: 0.8rem;
-        grid-column: 3;
+        gap: 1rem;
+        grid-column: 2;
     }
 
 }
