@@ -1,0 +1,139 @@
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideUp 0.3s;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--dark-gray);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--primary-blue);
+}
+
+.modal h2 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.modal-phone {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.modal-phone a {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+}
+
+.modal-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.modal-divider::before,
+.modal-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.modal-divider span {
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--light-blue);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
