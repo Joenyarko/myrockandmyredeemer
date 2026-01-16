@@ -730,6 +730,24 @@ footer {
         /* White hamburger icon */
         font-size: 1.8rem;
     }
+    
+    /* Mobile size reductions */
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .logo img {
+        height: 35px !important;
+    }
+    
+    .mobile-menu-btn {
+        font-size: 1.5rem !important;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
 
     .nav-links {
         position: fixed;
@@ -794,6 +812,23 @@ footer {
 @media (max-width: 576px) {
     h1 {
         font-size: 2rem;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo img {
+        height: 30px !important;
+    }
+    
+    .mobile-menu-btn {
+        font-size: 1.3rem !important;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
     }
 
     h2 {
