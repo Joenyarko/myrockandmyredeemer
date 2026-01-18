@@ -4,7 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="My Rock And My Redeemer Foundation - A non-profit supporting single parents, orphans, and the underprivileged in rural communities. Join us in championing hope.">
+    <meta name="keywords"
+        content="NGO, Charity, Single Parents, Orphans, Rural Support, Boreholes, Blind School, Ghana, Foundation, Non-profit">
+    <meta name="author" content="My Rock And My Redeemer Foundation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myrockandmyredeemer.org/">
+    <meta property="og:title" content="My Rock And My Redeemer Foundation | Championing Hope">
+    <meta property="og:description"
+        content="Supporting single parents, orphans, and the underprivileged. Join us in making a difference.">
+    <meta property="og:image" content="images/R&RLOGO1.png">
+
     <title>My Rock And My Redeemer Foundation | Championing Hope</title>
+
+    <!-- Preload Critical Hero Image -->
+    <link rel="preload" as="image" href="images/hero1.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,29 +107,39 @@
         <div class="container">
             <div class="section-title-center">
                 <h2>Who We Are</h2>
-                <p>Helping Hands Foundation is a non-profit organization committed to creating sustainable change in
-                    underprivileged communities.</p>
+                <p>My Rock And My Redeemer Foundation is a non-profit organization committed to creating sustainable
+                    change in
+                    underprivileged communities, with a special focus on single parents and orphans.</p>
             </div>
 
             <div class="who-we-are-content">
                 <div class="who-we-are-text">
                     <h3>Who We Are and What We Stand For!</h3>
-                    <p>At <strong>MY ROCK AND MY REDEEMER</strong>, we stand firm in our commitment to uplift and
+                    <p>At <strong>MY ROCK AND MY REDEEMER FOUNDATION</strong>, we stand firm in our commitment to uplift
+                        and
                         support the needy, underprivileged, physically challenged, and children with special needs in
                         our society.</p>
                     <p>Through compassion, resources, and collective action, we strive to create pathways out of
                         poverty, promote equality, and ignite lasting change.</p>
                     <p>Together, we empower lives, transform communities, and build a brighter future for all. Every act
                         of kindness counts – join us in making a difference.</p>
-                    <div
-                        style="margin-top: 1.5rem; background-color: var(--light-blue); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary-blue);">
-                        <h4 style="margin-bottom: 0.5rem; color: var(--primary-blue);">OUR MISSION</h4>
-                        <p style="margin-bottom: 0; font-weight: 600;">IS TO SUPPORT THE UNDER-PRIVILEGE IN THE VILLAGES
-                        </p>
+                    <div style="display: grid; gap: 1rem; margin-top: 1.5rem;">
+                        <div
+                            style="background-color: var(--light-blue); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+                            <h4 style="margin-bottom: 0.5rem; color: var(--primary-blue);">OUR MISSION</h4>
+                            <p style="margin-bottom: 0; font-weight: 600;">IS TO SUPPORT THE UNDER-PRIVILEGED IN THE
+                                VILLAGES</p>
+                        </div>
+                        <div
+                            style="background-color: var(--light-gray); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--secondary-blue);">
+                            <h4 style="margin-bottom: 0.5rem; color: var(--secondary-blue);">OUR VISION</h4>
+                            <p style="margin-bottom: 0; font-weight: 600;">IS TAKING CARE OF SINGLE PARENTS AND THE
+                                ELDERLY</p>
+                        </div>
                     </div>
                 </div>
                 <div class="who-we-are-image">
-                    <img src="images/ngo6.png" alt="My Rock And My Redeemer Volunteers">
+                    <img src="images/ngo6.png" alt="My Rock And My Redeemer Volunteers" loading="lazy">
                 </div>
             </div>
         </div>
@@ -126,48 +154,79 @@
             </div>
 
             <div class="cards-container">
+                <!-- 1. Single Parents -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="images/ngo5.png" alt="Children with special needs receiving support">
+                        <img src="images/single-parent.png" alt="Supporting single parents" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Support for Single Parents</h3>
+                        <p>We travel to rural areas to identify and support single parents who are struggling to provide
+                            for their families.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Elderly Care -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/ngo3.png" alt="Care for the elderly" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-person-cane"></i>
+                        </div>
+                        <h3>Care for the Elderly</h3>
+                        <p>Providing essential support, companionship, and healthcare assistance to the elderly,
+                            ensuring
+                            they live with dignity and love.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Orphans -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/ngo1.png" alt="Care for orphans" loading="lazy">
                     </div>
                     <div class="card-content">
                         <div class="card-icon">
                             <i class="fas fa-child"></i>
                         </div>
-                        <h3>Special Needs Children</h3>
-                        <p>Providing educational resources, therapy, and support systems for children with special needs
-                            and their families.</p>
-                        <!-- <a href="#" class="btn btn-secondary">Learn More</a> -->
+                        <h3>Care for Orphans</h3>
+                        <p>Taking care of neglected children on the streets and making regular donations to orphanages
+                            to ensure no child is left behind.</p>
                     </div>
                 </div>
 
+                <!-- 3. Boreholes -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="images/ngo1.png" alt="Physically challenged individuals participating in activities">
+                        <img src="images/ngo5.png" alt="Drilling boreholes" loading="lazy">
                     </div>
                     <div class="card-content">
                         <div class="card-icon">
-                            <i class="fas fa-wheelchair"></i>
+                            <i class="fas fa-water"></i>
                         </div>
-                        <h3>Physical Disability Support</h3>
-                        <p>Accessibility initiatives, mobility aids, and vocational training for physically challenged
-                            individuals.</p>
-                        <!-- <a href="#" class="btn btn-secondary">Learn More</a> -->
+                        <h3>Clean Water Projects</h3>
+                        <p>Drilling boreholes in water-deprived areas and communities struggling with contaminated water
+                            sources.</p>
                     </div>
                 </div>
 
+                <!-- 4. School for the Blind -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="images/ngo4.png" alt="Community development programs">
+                        <img src="images/ngo-blind.png" alt="Support for the blind" loading="lazy">
                     </div>
                     <div class="card-content">
                         <div class="card-icon">
-                            <i class="fas fa-hands"></i>
+                            <i class="fas fa-blind"></i>
                         </div>
-                        <h3>Community Development</h3>
-                        <p>Sustainable projects focused on education, healthcare, and economic empowerment in
-                            underprivileged areas.</p>
-                        <!-- <a href="#" class="btn btn-secondary">Learn More</a> -->
+                        <h3>School for the Blind</h3>
+                        <p>Providing specialized support, resources, and care for schools dedicated to the blind and
+                            visually impaired.</p>
                     </div>
                 </div>
             </div>
@@ -202,12 +261,12 @@
                 </div>
             </div>
 
-            <div class="section-title-center">
+            <!-- <div class="section-title-center">
                 <h3>Success Stories</h3>
                 <p>Every number represents a life changed, a family supported, and a community strengthened. Read about
                     our transformative work through the stories of those we've helped.</p>
                 <a href="#" class="btn btn-primary">View Success Stories</a>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -234,10 +293,7 @@
                     <p>Championing and supporting THE NEEDY and UNDER PRIVILEGE in our Society.</p>
                     <div class="social-icons" style="margin-top: 1.5rem;">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
@@ -247,7 +303,6 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#work">Our Programs</a></li>
-                        <li><a href="#">Success Stories</a></li>
                         <li><a href="#">Get Involved</a></li>
                         <li><a href="#">Donate</a></li>
                     </ul>

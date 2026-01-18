@@ -399,13 +399,13 @@ section {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 0.8rem;
+    gap: 0.5rem;
     z-index: 10;
 }
 
 .indicator {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -469,7 +469,9 @@ section {
 }
 
 .card-image {
-    height: 200px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
     overflow: hidden;
 }
 
@@ -697,7 +699,7 @@ footer {
         font-size: 0.75rem;
         line-height: 1;
     }
-    
+
     .top-navbar .container {
         display: flex;
         justify-content: space-between;
@@ -705,17 +707,17 @@ footer {
         padding: 0.5rem 1rem;
         gap: 0;
     }
-    
+
     .top-info-left {
         display: none !important;
     }
-    
+
     .top-info-center {
         text-align: left;
         margin: 0;
         font-size: 0.75rem;
     }
-    
+
     .social-icons {
         display: flex;
         gap: 1rem;
@@ -731,20 +733,20 @@ footer {
         /* White hamburger icon */
         font-size: 1.8rem;
     }
-    
+
     /* Mobile size reductions */
     .logo {
         font-size: 1.2rem;
     }
-    
+
     .logo img {
         height: 35px !important;
     }
-    
+
     .mobile-menu-btn {
         font-size: 1.5rem !important;
     }
-    
+
     .btn {
         padding: 0.7rem 1.5rem;
         font-size: 0.9rem;
@@ -814,19 +816,19 @@ footer {
     h1 {
         font-size: 2rem;
     }
-    
+
     .logo {
         font-size: 1rem;
     }
-    
+
     .logo img {
         height: 30px !important;
     }
-    
+
     .mobile-menu-btn {
         font-size: 1.3rem !important;
     }
-    
+
     .btn {
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
@@ -1027,4 +1029,3 @@ footer {
         font-size: 1.1rem;
     }
 }
-
