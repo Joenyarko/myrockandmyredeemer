@@ -1312,13 +1312,15 @@ iframe {
         margin-bottom: 3rem;
     }
 
-    /* Reduce internal card padding significantly to prevent cutoff */
+    /* Reduce internal card padding significantly */
     .contact-form-container,
     .info-card {
         padding: 1.5rem;
-        /* Reduced from 3rem */
         border-radius: 12px;
-        width: 100%;
+        width: 94%;
+        /* Aggressive width reduction to prevent edge touching */
+        margin: 0 auto;
+        /* Center the cards */
         box-sizing: border-box;
         /* Ensure padding is included in width */
     }
@@ -1332,8 +1334,8 @@ iframe {
     /* Tweak map container */
     .map-section iframe {
         height: 300px;
-        /* Shorter map on mobile */
         border-radius: 12px;
+        width: 100% !important;
     }
 
     /* Fix footer columns stacking */
@@ -1347,8 +1349,8 @@ iframe {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 1rem;
-        /* Tighter container padding */
+        padding: 0 0.5rem;
+        /* Minimal container padding */
     }
 
     .contact-header h1 {
@@ -1361,24 +1363,28 @@ iframe {
 
     .contact-form-container,
     .info-card {
-        padding: 1.25rem;
-        /* Even tighter on small phones */
+        padding: 1rem;
+        /* minimal padding */
+        width: 96%;
+        /* slightly wider on very small screens to maximize space */
     }
 
     .contact-form-container h3 {
         font-size: 0.85rem;
     }
 
-    /* Force inputs to fit */
+    /* Strict Input Sizing */
     .contact-page-section input,
     .contact-page-section textarea {
-        padding: 1rem;
-        /* Slightly smaller padding */
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        width: 100% !important;
+        min-width: 0;
+        /* Allow shrinking */
     }
 
     .btn-primary {
         width: 100%;
-        /* Full width button on small screens */
     }
 
     /* Ensure buttons wrap if needed */
