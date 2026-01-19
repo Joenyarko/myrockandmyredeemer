@@ -205,3 +205,48 @@ actionForm.addEventListener('submit', (e) => {
             btn.disabled = false;
         });
 });
+
+// Handle Contact Page Form Submission
+const contactPageForm = document.getElementById('contactPageForm');
+if (contactPageForm) {
+    contactPageForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const btn = contactPageForm.querySelector('button');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending Message...';
+        btn.disabled = true;
+
+        const templateParams = {
+            from_name: document.getElementById('contact_name').value,
+            from_email: document.getElementById('contact_email').value,
+            from_contact: document.getElementById('contact_phone').value,
+            message: document.getElementById('contact_message').value,
+            subject: "New Contact Message from " + document.getElementById('contact_name').value
+        };
+        
+        emailjs.send('service_15qt7u9', 'template_77bb575', templateParams)
+            .then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'We have received your message and will get back to you shortly.',
+                    confirmButtonColor: '#e63946'
+                });
+                contactPageForm.reset();
+            })
+            .catch((error) => {
+                console.error('FAILED...', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Sending Failed',
+                    text: 'Please try again later or contact us directly via phone.',
+                    confirmButtonColor: '#e63946'
+                });
+            })
+            .finally(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+    });
+}
