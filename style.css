@@ -1317,12 +1317,10 @@ iframe {
     .info-card {
         padding: 1.5rem;
         border-radius: 12px;
-        width: 94%;
-        /* Aggressive width reduction to prevent edge touching */
-        margin: 0 auto;
-        /* Center the cards */
+        /* Safe fluid width using margins instead of hard widths */
+        width: auto;
+        margin: 0 15px;
         box-sizing: border-box;
-        /* Ensure padding is included in width */
     }
 
     /* Ensure form rows stack */
@@ -1343,14 +1341,13 @@ iframe {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: left;
-        /* Keep left align for better readability */
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 0.5rem;
-        /* Minimal container padding */
+        padding: 0 10px;
+        /* Safe small padding */
     }
 
     .contact-header h1 {
@@ -1364,9 +1361,8 @@ iframe {
     .contact-form-container,
     .info-card {
         padding: 1rem;
-        /* minimal padding */
-        width: 96%;
-        /* slightly wider on very small screens to maximize space */
+        /* Ensure it fits on very small screens */
+        margin: 0 5px;
     }
 
     .contact-form-container h3 {
@@ -1380,14 +1376,12 @@ iframe {
         font-size: 0.9rem;
         width: 100% !important;
         min-width: 0;
-        /* Allow shrinking */
     }
 
     .btn-primary {
         width: 100%;
     }
 
-    /* Ensure buttons wrap if needed */
     .hero-buttons,
     .cta-buttons {
         width: 100%;
