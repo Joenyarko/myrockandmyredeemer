@@ -1276,6 +1276,8 @@ body {
 input,
 textarea,
 select {
+    width: 100% !important;
+    /* Force width constraint */
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -1310,11 +1312,15 @@ iframe {
         margin-bottom: 3rem;
     }
 
-    /* Reduce internal card padding */
+    /* Reduce internal card padding significantly to prevent cutoff */
     .contact-form-container,
     .info-card {
         padding: 1.5rem;
+        /* Reduced from 3rem */
         border-radius: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        /* Ensure padding is included in width */
     }
 
     /* Ensure form rows stack */
@@ -1357,6 +1363,22 @@ iframe {
     .info-card {
         padding: 1.25rem;
         /* Even tighter on small phones */
+    }
+
+    .contact-form-container h3 {
+        font-size: 0.85rem;
+    }
+
+    /* Force inputs to fit */
+    .contact-page-section input,
+    .contact-page-section textarea {
+        padding: 1rem;
+        /* Slightly smaller padding */
+    }
+
+    .btn-primary {
+        width: 100%;
+        /* Full width button on small screens */
     }
 
     /* Ensure buttons wrap if needed */
