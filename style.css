@@ -1060,16 +1060,17 @@ footer {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    /* make the left/form column wider so the form and hours feel more open */
+    grid-template-columns: 1.4fr 0.6fr;
     gap: 3rem;
-    align-items: stretch;
+    align-items: start;
     margin-bottom: 4rem;
 }
 
 .contact-form-container,
 .info-card {
     background: var(--white);
-    padding: 3rem;
+    padding: 1.5rem;
     border-radius: 16px;
     /* Soft, deep shadow for floating effect */
     box-shadow: 0 20px 40px rgba(0, 71, 171, 0.08);
@@ -1241,12 +1242,19 @@ footer {
 
 @media (max-width: 992px) {
     .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
 
     .hours-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-form-container,
+    .info-card,
+    .contact-panel {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
@@ -1257,8 +1265,8 @@ footer {
 /* Force horizontal layout on wider screens and ensure right column stacks internally */
 @media (min-width: 993px) {
     .contact-grid {
-        grid-template-columns: 1fr 420px;
-        /* slightly wider right column for info cards */
+        /* give the form substantially more room on desktop */
+        grid-template-columns: 1.6fr 0.4fr;
         align-items: start;
     }
 
@@ -1270,6 +1278,18 @@ footer {
 
     .contact-form-container {
         min-width: 0;
+    }
+
+    /* slightly increase breathing room for the hours card */
+    .hours-card {
+        padding: 2.2rem;
+    }
+
+    /* Ensure both main boxes fully fill their grid column so edges align */
+    .contact-form-container,
+    .contact-info-container,
+    .info-card {
+        width: 100%;
     }
 }
 
@@ -1324,5 +1344,97 @@ body,
 @media (max-width: 576px) {
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    /* Reduce container side padding so boxes can expand to viewport edges */
+    .container {
+        padding: 0 0.5rem !important;
+    }
+
+    /* Reduce vertical padding but open horizontal space */
+    .contact-page-section {
+        padding: 1.8rem 0 !important;
+    }
+
+    /* Force smaller internal padding on contact/info boxes */
+    .contact-form-container,
+    .info-card,
+    .contact-panel {
+        padding: 0.8rem !important;
+        border-radius: 10px !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    /* Slightly larger, more tappable inputs */
+    .contact-page-section input,
+    .contact-page-section textarea {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* Ensure media never overflow */
+    img,
+    iframe {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Prevent horizontal scroll */
+    .contact-form-container,
+    .info-card,
+    .contact-panel,
+    .contact-grid {
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    /* Button sizing */
+    .contact-form-container .btn-primary {
+        padding: 0.9rem !important;
+        font-size: 0.98rem !important;
+    }
+}
+
+/* Extra tight layout for very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.4rem !important;
+    }
+
+    .contact-grid {
+        gap: 0.6rem !important;
+    }
+
+    .contact-form-container,
+    .info-card,
+    .contact-panel {
+        padding: 0.6rem !important;
+        border-radius: 8px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .form-row {
+        gap: 0.6rem !important;
+    }
+
+    .contact-page-section input,
+    .contact-page-section textarea {
+        padding: 0.8rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .contact-form-container .btn-primary {
+        padding: 0.8rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Prevent overflow */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
     }
 }
