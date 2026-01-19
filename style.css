@@ -92,11 +92,7 @@ a {
 
 section {
     padding: 5rem 0;
-}
 
-.section-title-center {
-    text-align: center;
-    margin-bottom: 3rem;
 }
 
 .section-title-center h2::after {
@@ -1257,7 +1253,6 @@ footer {
 .contact-panel {
     padding: 1.4rem;
 }
-
 
 /* Force horizontal layout on wider screens and ensure right column stacks internally */
 @media (min-width: 993px) {
