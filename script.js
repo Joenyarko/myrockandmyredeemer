@@ -23,6 +23,9 @@ const indicators = document.querySelectorAll('.indicator');
 let currentSlide = 0;
 
 function showSlide(index) {
+    // Guard: exit if carouselSlides is empty (e.g., on contact page)
+    if (!carouselSlides.length || !indicators.length) return;
+
     // Hide all slides
     carouselSlides.forEach(slide => {
         slide.classList.remove('active');
@@ -149,62 +152,68 @@ document.querySelectorAll('.btn').forEach(btn => {
 });
 
 // Close Modal
-closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+}
 
 // Close outside click
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-    }
-});
+if (modal) {
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
 
 // Handle Form Submission
-actionForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+if (actionForm) {
+    actionForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    const btn = actionForm.querySelector('button');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
+        const btn = actionForm.querySelector('button');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
 
-    // Collect form data
-    const requestType = modalTitle.textContent;
-    const templateParams = {
-        from_name: document.getElementById('from_name').value,
-        from_email: document.getElementById('from_email').value,
-        from_contact: document.getElementById('from_contact').value,
-        message: "Request Type: " + requestType,
-        subject: requestType + " - New Request from " + document.getElementById('from_name').value
-    };
+        // Collect form data
+        const requestType = modalTitle.textContent;
+        const templateParams = {
+            from_name: document.getElementById('from_name').value,
+            from_email: document.getElementById('from_email').value,
+            from_contact: document.getElementById('from_contact').value,
+            message: "Request Type: " + requestType,
+            subject: requestType + " - New Request from " + document.getElementById('from_name').value
+        };
 
-    // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with actual values from EmailJS dashboard
-    emailjs.send('service_15qt7u9', 'template_77bb575', templateParams)
-        .then(() => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Thank You!',
-                text: 'Your request has been received. We will contact you shortly.',
-                confirmButtonColor: '#0047AB'
+        // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with actual values from EmailJS dashboard
+        emailjs.send('service_15qt7u9', 'template_77bb575', templateParams)
+            .then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thank You!',
+                    text: 'Your request has been received. We will contact you shortly.',
+                    confirmButtonColor: '#0047AB'
+                });
+                modal.style.display = 'none';
+                actionForm.reset();
+            })
+            .catch((error) => {
+                console.error('FAILED...', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Please try again or contact us directly.',
+                    confirmButtonColor: '#0047AB'
+                });
+            })
+            .finally(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
             });
-            modal.style.display = 'none';
-            actionForm.reset();
-        })
-        .catch((error) => {
-            console.error('FAILED...', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong. Please try again or contact us directly.',
-                confirmButtonColor: '#0047AB'
-            });
-        })
-        .finally(() => {
-            btn.textContent = originalText;
-            btn.disabled = false;
-        });
-});
+    });
+}
 
 // Handle Contact Page Form Submission
 const contactPageForm = document.getElementById('contactPageForm');
@@ -224,7 +233,7 @@ if (contactPageForm) {
             message: document.getElementById('contact_message').value,
             subject: "New Contact Message from " + document.getElementById('contact_name').value
         };
-        
+
         emailjs.send('service_15qt7u9', 'template_77bb575', templateParams)
             .then(() => {
                 Swal.fire({
