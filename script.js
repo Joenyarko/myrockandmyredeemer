@@ -188,7 +188,7 @@ if (actionForm) {
         };
 
         // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with actual values from EmailJS dashboard
-        emailjs.send('service_15qt7u9', 'template_77bb575', templateParams)
+        emailjs.send('service_vmsslwf', 'template_evv5hce', templateParams)
             .then(() => {
                 Swal.fire({
                     icon: 'success',
@@ -234,7 +234,7 @@ if (contactPageForm) {
             subject: "New Contact Message from " + document.getElementById('contact_name').value
         };
 
-        emailjs.send('service_15qt7u9', 'template_77bb575', templateParams)
+        emailjs.send('service_vmsslwf', 'template_evv5hce', templateParams)
             .then(() => {
                 Swal.fire({
                     icon: 'success',
