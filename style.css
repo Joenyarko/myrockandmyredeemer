@@ -95,6 +95,10 @@ section {
 
 }
 
+.section-title-center {
+    text-align: center;
+}
+
 .section-title-center h2::after {
     left: 50%;
     transform: translateX(-50%);
@@ -1024,6 +1028,27 @@ footer {
     .modal-phone a {
         font-size: 1.1rem;
     }
+
+    /* Remove underlines from phone and email in contact info */
+    .info-item p {
+        text-decoration: none !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Reduce font size of email name label in mobile view */
+    .info-item span {
+        font-size: 0.65rem;
+    }
+
+    /* Ensure contact info text has no underline */
+    .contact-info div {
+        text-decoration: none !important;
+    }
+
+    /* Remove underlines from footer contact info */
+    .contact-info li div {
+        text-decoration: none !important;
+    }
 }
 
 /* ============================
@@ -1227,6 +1252,11 @@ footer {
     font-weight: 600;
     font-size: 1.05rem;
     color: var(--dark-blue);
+    text-decoration: none !important;
+}
+
+.info-item:nth-child(3) p {
+    font-size: 0.9rem;
 }
 
 .hours-grid {
