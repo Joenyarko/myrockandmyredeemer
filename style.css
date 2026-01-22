@@ -83,6 +83,16 @@ a {
     color: inherit;
 }
 
+/* Prevent underline on auto-detected links (iOS/Android) */
+a[href^="tel"],
+a[href^="mailto"],
+.contact-phone a,
+.contact-email a,
+.top-info-center a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 .container {
     width: 100%;
     max-width: var(--max-width);
@@ -724,6 +734,11 @@ footer {
         margin: 0;
     }
 
+    /* Reduce email font size for mobile to prevent overflow/visual issues */
+    .contact-email {
+        font-size: 0.85rem;
+        word-break: break-all;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1476,7 +1491,8 @@ body,
     }
 
     /* Prevent overflow */
-    html, body {
+    html,
+    body {
         max-width: 100%;
         overflow-x: hidden;
         -webkit-text-size-adjust: 100%;
