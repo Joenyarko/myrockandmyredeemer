@@ -1259,6 +1259,20 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Prevent automatic telephone/mailto link styling and keep phone numbers on one line */
+a[href^="tel"],
+a[href^="mailto"] {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.phone-numbers {
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+    display: inline-block;
+}
+
 .hours-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1.5rem;
