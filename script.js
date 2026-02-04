@@ -119,6 +119,26 @@ function openModal(title) {
     content.style.animation = 'none';
     content.offsetHeight; /* trigger reflow */
     content.style.animation = 'slideUp 0.3s';
+
+    // Toggle amount field visibility and button style
+    const amountGroup = document.getElementById('amount-group');
+    const amountInput = document.getElementById('amount');
+    const submitBtn = actionForm.querySelector('button[type="submit"]');
+
+    if (title === 'Make a Donation') {
+        amountGroup.style.display = 'block';
+        amountInput.required = true;
+        submitBtn.textContent = 'Pay';
+        submitBtn.style.backgroundColor = '#28a745'; // Green
+        submitBtn.style.borderColor = '#28a745';
+    } else {
+        amountGroup.style.display = 'none';
+        amountInput.required = false;
+        amountInput.value = ''; // Clear value
+        submitBtn.textContent = 'Submit Request';
+        submitBtn.style.backgroundColor = ''; // Reset to default
+        submitBtn.style.borderColor = '';
+    }
 }
 
 // Open modal for Donate buttons
@@ -179,6 +199,15 @@ if (actionForm) {
 
         // Collect form data
         const requestType = modalTitle.textContent;
+
+        // Check if it's a donation
+        if (requestType === 'Make a Donation') {
+            payWithPaystack(e);
+            btn.textContent = originalText;
+            btn.disabled = false;
+            return;
+        }
+
         const templateParams = {
             from_name: document.getElementById('from_name').value,
             from_email: document.getElementById('from_email').value,
